@@ -1,0 +1,31 @@
+.search {
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.form-container {
+  border-radius: 20px;
+  width: 70%;
+  height: auto;
+  background-image: url("/homebg.jpg");
+  background-size: 40% 100%;
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: rgb(126 126 135 / 23%) -3px 1px 9px 3px;
+}
+
+.almanac-form {
+  width: 50%;
+  margin: 1rem;
+  padding: 3rem;
+  border-radius: 10px;
+}
+
+.almanac-form select {
+  display: block !important;
+}
+.almanac__label {
+  font-size: 1.1rem;
+}
