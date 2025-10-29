@@ -36,8 +36,7 @@ export default function Signup() {
       return;
     }
 
-    const passwordPattern =
-      /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
+    const passwordPattern = /^.{8,}$/;
     if (!passwordPattern.test(password)) {
       setMessage(
         "Password must be at least 8 characters with uppercase, lowercase, number & special character."
@@ -64,7 +63,7 @@ export default function Signup() {
       if (res.ok) {
         setMessage("Signup successful! Redirecting...");
         setIsError(false);
-        setTimeout(() => (window.location.href = "/login"), 2000);
+        setTimeout(() => (window.location.href = "/"), 2000);
       } else {
         setMessage(result.error || "Signup failed.");
         setIsError(true);
