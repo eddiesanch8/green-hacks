@@ -11,29 +11,16 @@ import libraryRouter from "./routes/library.js";
 const app = express();
 app.use(express.json());
 app.use(cors());
-
+app.use(express.urlencoded({ extended: true }));
 
 //---------------------------------------Plant Routes --------------------------------------------------\\
 
 app.use("/api", plantRoutes);
-app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authRoutes);
-const PORT = 3000;
 app.use("/library", libraryRouter);
 
 // --------------------------------------- setting up server endpoints ----------------------------------\\
-
-app.get("/api/dummy", authenticateToken, async (req, res) => {
-  try {
-    res.send("this is my fake api call");
-  } catch (err) {
-    res.send("wrong you dummy!");
-  }
-});
-
-app.get("/", (req, res) => {
-  res.send("hello");
-});
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

@@ -4,36 +4,35 @@ import Anthropic from "@anthropic-ai/sdk";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 
-
 //--------------Configs-----------------//
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 dotenv.config({ path: resolve(__dirname, "../../.env") });
-
-//--------------User Prompt Variables----------
-
-const userLocation = 'Richmond, VA';
-const userSeason = "Spring";
-const userPlotSize = "100 acres";
-const userExperience = "Intermidiate"
 
 //---------------Claude Call-------------//
 const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-async function getAISeeds() {
-    // const {userName, location, plotSize} = req.body 
-  const message = await client.messages.create({
-    model: "claude-haiku-4-5-20251001",
-    max_tokens: 2050,
-    system: `You are an expert botanist and sustainable agriculture advisor specializing in native plants and biodiversity restoration. Your mission is to recommend native and regionally appropriate plants that support local ecosystems, combat monoculture, and promote sustainable gardening practices.
+//--------------User Prompt Variables----------
+
+async function getAISeeds(
+  userLocation,
+  userSeason,
+  userPlotSize,
+  userExperience
+) {
+  try {
+    const message = await client.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 2050,
+      system: `You are an expert botanist and sustainable agriculture advisor specializing in native plants and biodiversity restoration. Your mission is to recommend native and regionally appropriate plants that support local ecosystems, combat monoculture, and promote sustainable gardening practices.
 User Input
 Users will provide their information in natural language, including:
 
-Location (city, state/region, or coordinates)
-Season (when they want to plant)
-Plot size (dimensions or description of space)
+Location (city, state/region, and Zip Code)
+Season (When they would be planting Summer/Fall/Winter/Spring)
+Growing Space (dimensions or description of space in which they can plant)
 Experience level (beginner, intermediate, or advanced)
 
 Requirements
@@ -71,26 +70,25 @@ Use only these categories for the type field:
 9. succulent
 10. cactus
     `,
-    messages: [
-      {
-        role: "user",
-        content: `I'm in ${userLocation} and want to plant a ${userSeason} garden. I have a ${userPlotSize} space and I'm a ${userExperience} gardener.`,
-      },
-    ],
-  });
+      messages: [
+        {
+          role: "user",
+          content: `I'm in ${userLocation} and want to plant a garden in the ${userSeason}. I have a ${userPlotSize} for growing space and I'm a ${userExperience} gardener.`,
+        },
+      ],
+    });
 
-  let responseText = message.content[0].text;
+    let responseText = message.content[0].text;
 
-  // Strip markdown code blocks if present
-  responseText = responseText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+    // Strip markdown code blocks if present
+    responseText = responseText.replace(/```(?:json)?\n?/g, "").trim();
 
-  const seedData = JSON.parse(responseText)
-  console.log(seedData)
-  
-  
-  return seedData;
+    const seedData = JSON.parse(responseText);
+    return seedData;
+  } catch (error) {
+    console.error("Errror in getAISeeds", error);
+    throw error;
+  }
 }
-
-getAISeeds().catch(console.error);
 
 export { getAISeeds };
