@@ -4,7 +4,6 @@
     box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0);
 }
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -13,6 +12,7 @@
     position: relative;
     z-index: 1001;
     height: 7rem;
+    background-color: transparent;
 }
 
 .burger {
@@ -60,7 +60,7 @@ footer div p {
 
 @media only screen and (max-width: 768px) {
     body {
-        overflow-y: hidden;
+        overflow-x: hidden;
     }
 
     header nav ul {

@@ -1,23 +1,35 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
+import NoLogNav from "./components/NoLogNav";
+import SignUpNav from "./components/SignUpNav";
+import LoginNav from "./components/LoginNav";
+import LoggedInNav from "./components/LoggedInNav";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Saved from "./pages/Saved";
+import Results from "./pages/Results";
 import Footer from "./components/Footer";
 import "materialize-css/dist/css/materialize.min.css";
 
-// import new pages
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <Header />
+      <Routes>
+          <Route path="/" element={<NoLogNav />} />
+          <Route path="signup" element={<SignUpNav />} />
+          <Route path="login" element={<LoginNav />} />
+          <Route path="*" element={<LoggedInNav />} />
+      </Routes>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/seeds" element={<Saved />} />
+        <Route path="/results" element={<Results />} />        
       </Routes>
       <Footer />
     </BrowserRouter>
