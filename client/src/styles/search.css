@@ -9,6 +9,7 @@
   height: auto;
   background-image: url("/homebg.jpg");
   background-size: 40% 100%;
+  background-color: #ffffff;
   background-position: left center, right center;
   background-repeat: no-repeat;
   display: flex;
@@ -28,4 +29,19 @@
 }
 .almanac__label {
   font-size: 1.1rem;
+}
+
+.form__btn {
+  margin: 1rem auto;
+  width: 50%;
+  color: white;
+  background-color: #477b34;
+  padding: 1rem;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.form__btn:hover {
+  transform: scale(1.01);
+  background-color: #477b34ce;
 }
