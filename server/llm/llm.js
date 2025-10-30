@@ -11,7 +11,7 @@ dotenv.config({ path: resolve(__dirname, "../../.env") });
 
 //---------------Claude Call-------------//
 const client = new Anthropic({
-  apiKey: proccess.env.ANTHROPIC_API_KEY,
+  apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
 //--------------User Prompt Variables----------
