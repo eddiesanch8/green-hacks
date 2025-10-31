@@ -30,7 +30,8 @@ function ResultCard({plant}) {
                     <p><b>Zone: {plant.growingZones}</b></p>
                 </div>
                 <div className="bookmark__div">                    
-                  <FavoriteButton plant={plant} />                
+                  <FavoriteButton plant={plant} /> 
+                </div> 
                 </div>
             <div className="midSection">
                 <div className="IMG">
