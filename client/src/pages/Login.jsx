@@ -21,7 +21,7 @@ export default function Login() {
     }
 
     try {
-      const res = await fetch("https://green-hacks-production.up.railway.app", {
+      const res = await fetch("https://green-hacks-production.up.railway.app/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
