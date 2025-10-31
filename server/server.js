@@ -2,8 +2,9 @@ import express from "express";
 import cors from "cors";
 import plantRoutes from "./routes/plantRoutes.js";
 import authRoutes from "./routes/auth.js";
-// authenticateToken will be used to make an api call
-// router for adding user preferences
+import { createTable } from "./config/sqlUtils.js";
+import { userSchema } from "./schema/userSchema.js";
+import { librarySchema } from "./schema/librarySchema.js";
 import libraryRouter from "./routes/library.js";
 
 // --------------------------------------- setting up server settings ----------------------------------\\
@@ -20,6 +21,23 @@ app.use("/library", libraryRouter);
 
 // --------------------------------------- setting up server endpoints ----------------------------------\\
 const PORT = 3000;
+
+const initializeTables = async () => {
+  try {
+    // Create users table FIRST
+    await createTable(userSchema);
+    console.log("Users table initialized");
+
+    // Then create tables that reference users
+    await createTable(librarySchema);
+    console.log("Library table initialized");
+  } catch (error) {
+    console.error("Error initializing tables:", error);
+  }
+};
+
+// Call this before starting the server
+initializeTables();
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
