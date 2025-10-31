@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../styles/Navbar.css'
-import nativLogo from "/nativLogo.png"
+import "../styles/Navbar.css";
+import nativLogo from "/nativLogo.png";
 import { useState } from "react";
 
 function LoggedInNav() {
@@ -47,6 +47,15 @@ function LoggedInNav() {
               onClick={closeMenu}
             >
               About Us
+            </Link>
+          </li>
+          <li className="nav__li center-align">
+            <Link
+              to="/favorites"
+              className="nav__a center-align green-text text-darken-4"
+              onClick={closeMenu}
+            >
+              Favorites
             </Link>
           </li>
         </ul>

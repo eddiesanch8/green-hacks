@@ -43,7 +43,7 @@ function SeedPack({ plant }) {
         </ul>
       </div>
       <div className="favorite__div">
-        <FavoriteButton />{" "}
+        <FavoriteButton plant={plant} />
       </div>
     </div>
   );

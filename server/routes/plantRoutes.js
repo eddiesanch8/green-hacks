@@ -1,5 +1,5 @@
 import express from "express";
-import { getAISeeds } from "../llm/llm.js";
+import { getAISeeds } from "./llm.js";
 import authenticateToken from "../routes/authToken.js";
 
 const router = express.Router();

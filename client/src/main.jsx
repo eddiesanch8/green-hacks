@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { SearchForm } from "./components/search";
+import { SearchForm } from "./pages/SearchForm";
 import NoLogNav from "./components/NoLogNav";
 import SignUpNav from "./components/SignUpNav";
 import LoginNav from "./components/LoginNav";
@@ -13,8 +13,6 @@ import Saved from "./pages/Saved";
 import Results from "./pages/Results";
 import Footer from "./components/Footer";
 import "materialize-css/dist/css/materialize.min.css";
-
-
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -30,8 +28,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/search" element={<SearchForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/seeds" element={<Saved />} />
-        <Route path="/results" element={<Results />} />        
+        <Route path="/favorites" element={<Saved />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
       <Footer />
     </BrowserRouter>
