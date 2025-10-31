@@ -36,7 +36,7 @@ export function SearchForm() {
 
     try {
       const token = localStorage.getItem("access_token");
-      const res = await fetch("https://green-hacks-production.up.railway.app", {
+      const res = await fetch("https://green-hacks-production.up.railway.app/api/search", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
