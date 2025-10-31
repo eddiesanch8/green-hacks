@@ -4,35 +4,45 @@ import '../styles/seedpack.css'
 function SeedPack({plant}) {
     let plantIcon;
 
-    if (plant.type == "tree") {
-        plantIcon = <i className="material-icons green-text text-darken-3">park</i>;
-    } else if (plant.type === "shrub") {
-        plantIcon = <i className="material-icons green-text text-darken-1">nature</i>;
-    } else if (plant.type === "flower") {
-        plantIcon = <i className="material-icons yellow-text text-darken-4">local_florist</i>;
-    } else if (plant.type === "fern" || plant.type === "succulent") {
-        plantIcon = <i className="material-icons green-text">spa</i>;
-    } else if (plant.type === "groundcover") {
-        plantIcon = <i className="material-icons green-text">grass</i>;
-    } else if (plant.type === "vegetable") {
-        plantIcon = <i className="material-icons green-text">nutrition</i>;
-    } else if (plant.type === "herb" || plant.type === "vine") {
-        plantIcon = <i className="material-icons green-text">eco</i>;
-    } else {
-        plantIcon = <i className="material-icons green-text">potted_plant</i>;
+    switch (plant.type) {
+        case "Tree":
+            plantIcon = <i className="material-icons green-text text-darken-3">park</i>;
+            break;
+        case "Shrub":
+            plantIcon = <i className="material-icons green-text text-darken-1">nature</i>;
+            break;
+        case "Flower":
+            plantIcon = <i className="material-icons yellow-text text-darken-4">local_florist</i>;
+            break;
+        case "Fern":
+        case "Succulent":
+            plantIcon = <i className="material-icons green-text">spa</i>;
+            break;
+        case "Groundcover":
+            plantIcon = <i className="material-icons green-text">grass</i>;
+            break;
+        case "Vegetable":
+            plantIcon = <i className="material-icons red-text darken-1">nutrition</i>;
+            break;     
+        case "Herb":
+        case "Vine":
+            plantIcon = <i className="material-icons green-text">eco</i>;
+            break;     
+        default:
+            plantIcon = <i className="material-icons green-text">potted_plant</i>;
     }
-
+    
     return (
-        <div className="green darken-2">
+        <div className="green lighten-2">
             <div className="plantIcon__div">
                 <div>{plantIcon}</div>
             </div>
             <div className="plantDesc__div">
                 <ul>
-                    <li>{plant.name} {plant.scientificName}</li>
-                    <li>Zone: {plant.growingZones}</li>
-                    <li>Season for growth: {plant.season}</li>
-                    <li>Details: {plant.description}</li>
+                    <li><b>Name:</b> {plant.name} ({plant.scientificName})</li>
+                    <li><b>Season for growth:</b> {plant.season}</li>
+                    <li><b>Details:</b> {plant.description}</li>
+                    <li><b>Care:</b> {plant.care}</li>
                 </ul>
                 </div>
             <div className="favorite__div"><i className="material-icons yellow-text text-darken-4">bookmark</i></div>

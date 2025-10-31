@@ -13,6 +13,7 @@ import Saved from "./pages/Saved";
 import Results from "./pages/Results";
 import Footer from "./components/Footer";
 import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/js/materialize.min.js";
 
 
 
