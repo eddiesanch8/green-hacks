@@ -23,11 +23,10 @@ function LoginNav() {
                 </Link>
                 <ul className={`nav-menu right ${menuOpen ? 'active' : ''}`}>
                     <li className="nav__li center-align">
-                    <Link to="/signup" className="nav__a center-align yellow-text text-darken-4" onClick={closeMenu}>SignUp</Link>
-                    </li> <li className="nav__li center-align">
-                    <Link to="/aboutus" className="nav__a center-align green-text text-darken-4" onClick={closeMenu}>About Us</Link>
-                    </li> <li className="nav__li center-align">
-                    <Link to="/why-nativ" className="nav__a center-align green-text text-darken-4" onClick={closeMenu}>Why Nativ?</Link>
+                        <Link to="/signup" className="nav__a center-align yellow-text text-darken-4" onClick={closeMenu}>SignUp</Link>
+                    </li> 
+                    <li className="nav__li center-align">
+                        <Link to="/aboutus" className="nav__a center-align green-text text-darken-4" onClick={closeMenu}>About Us</Link>
                     </li>
                 </ul>
                 <div
