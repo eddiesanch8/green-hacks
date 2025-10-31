@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
-import { SearchForm } from "./components/search";
+import { SearchForm } from "./pages/SearchForm"
 import NoLogNav from "./components/NoLogNav";
 import SignUpNav from "./components/SignUpNav";
 import LoginNav from "./components/LoginNav";
@@ -30,6 +30,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/search" element={<SearchForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/favorites" element={<Saved />} />
+        <Route path="/results" element={<Results />} />
         <Route path="/about" element={<AboutUs />} />
       </Routes>
       <Footer />

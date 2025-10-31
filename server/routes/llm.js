@@ -1,16 +1,10 @@
 import dotenv from "dotenv";
+dotenv.config();
 import Anthropic from "@anthropic-ai/sdk";
-import { fileURLToPath } from "url";
-import { dirname, resolve } from "path";
-
-//--------------Configs-----------------//
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-dotenv.config({ path: resolve(__dirname, "../../.env") });
 
 //---------------Claude Call-------------//
 const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEYS,
+  apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
 //--------------User Prompt Variables----------
@@ -31,7 +25,7 @@ Requirements:
 - Focus only on native and regionally appropriate species for the user's location
 - Suggest 5 different plants, each unique in type and growing requirements
 - Tailor recommendations to the user's experience level (e.g., low-maintenance plants for beginners)
-- Care instructions should be 2-3 concise sentences
+- Care instructions should be 2 concise sentences
 - If exact native plants are unknown, select closely related species from the same USDA or regional planting zone
 
 CRITICAL JSON RULES:
@@ -40,7 +34,7 @@ CRITICAL JSON RULES:
 - Keep all descriptions concise
 - Output must be valid JSON only — no markdown, no code blocks, no extra text
 
-Return exactly one array of 6 objects following this structure:
+Return exactly one array of 5 objects following this structure:
 [
   {
     "name": "Common plant name",
@@ -48,6 +42,7 @@ Return exactly one array of 6 objects following this structure:
     "season": "Best planting season",
     "care": "Brief care instructions for light, water, and soil",
     "funFact": "Interesting ecological or wildlife benefit",
+    "description": "brief 2-3 sentence description",
     "growingZones": "USDA zones like 6-9",
     "type": "one of: Tree, Shrub, Flower, Fern, Groundcover, Vegetable, Herb, Vine, Succulent, Cactus"
   }
