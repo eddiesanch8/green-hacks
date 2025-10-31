@@ -1,5 +1,6 @@
 import React from "react";
-import '../styles/ResultCard.css'
+import "../styles/ResultCard.css";
+import FavoriteButton from "./favoriteBtn";
 
 function ResultCard({plant}) {
     let plantIcon;
@@ -29,9 +30,8 @@ function ResultCard({plant}) {
                     <p><b>Zone: {plant.growingZones}</b></p>
                 </div>
                 <div className="bookmark__div">                    
-                    <i className="material-icons orange-text text-darken-2">bookmark</i>
+                  <FavoriteButton plant={plant} />                
                 </div>
-            </div>
             <div className="midSection">
                 <div className="IMG">
                     {plantIcon}
@@ -48,7 +48,18 @@ function ResultCard({plant}) {
             <div className="description"><b>Plant Care:</b> {plant.care}</div>
             <div className="description"><b>Fun Fact:</b> {plant.funFact}</div>
         </div>
-    )
+      </div>
+      <div className="description">
+        Description: Full sun to partial shade; highly drought-tolerant once
+        established. Plant in average to poor soil—rich soil encourages
+        excessive foliage over flowers. Space 12-18 inches apart. Deadhead
+        regularly to extend blooming. Minimal water needed except during extreme
+        drought. Divide every 3-4 years.
+      </div>
+      <div className="description">Plant Care: {plant.care}</div>
+      <div className="description">Fun Fact: {plant.funFact}</div>
+    </div>
+  );
 }
 
 export default ResultCard;

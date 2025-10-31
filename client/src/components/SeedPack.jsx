@@ -1,5 +1,6 @@
 import React from "react";
-import '../styles/seedpack.css'
+import "../styles/seedpack.css";
+import FavoriteButton from "./favoriteBtn";
 
 function SeedPack({plant}) {
     let plantIcon;
@@ -37,8 +38,20 @@ function SeedPack({plant}) {
                 </div>
             <div className="favorite__div"><i className="material-icons yellow-text text-darken-4">bookmark</i></div>
         </div>
-    )
+      </div>
+      <div className="plantDesc__div">
+        <ul>
+          <li>Schweinitz's sunflower</li>
+          <li>Helianthus schweinitzii</li>
+          <li>Zone: ____</li>
+          <li>Details: ____</li>
+        </ul>
+      </div>
+      <div className="favorite__div">
+        <i className="material-icons red-text text-darken-3">favorite</i>
+      </div>
+    </div>
+  );
 }
-
 
 export default SeedPack;
