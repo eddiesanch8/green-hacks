@@ -1,0 +1,13 @@
+main h2 {
+    text-align: center;
+}
+
+label {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.select-wrapper input.select-dropdown {
+    /* max-width: 50%; */
+    align-items: center;
+}

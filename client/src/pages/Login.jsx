@@ -34,8 +34,9 @@ export default function Login() {
         setIsError(false);
         localStorage.setItem("access_token", result.access_token);
         localStorage.setItem("first_name", result.first_name);
+        localStorage.setItem("userID", result.userID);
 
-        setTimeout(() => (window.location.href = "/dashboard"), 2000);
+        setTimeout(() => (window.location.href = "/search"), 2000);
       } else {
         setMessage(result.error || "Invalid credentials");
         setIsError(true);

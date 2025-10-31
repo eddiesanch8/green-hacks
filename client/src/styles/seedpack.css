@@ -1,0 +1,67 @@
+.green.lighten-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  border-radius: 0.33rem;
+  height: auto;
+  max-width: 80%;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem;
+  gap: 1rem; 
+}
+
+.plantIcon__div {
+  flex: 0 0 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plantIcon__div i {
+  font-size: 3.5rem;
+  display: block;
+}
+
+.plantDesc__div {
+  flex: 1;
+}
+
+.plantDesc__div ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plantDesc__div li {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.favorite__div {
+  flex: 0 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite__div i {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .green.lighten-2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .plantIcon__div,
+  .favorite__div {
+    flex: none;
+    margin-bottom: 0.5rem;
+  }
+
+  .plantDesc__div {
+    width: 100%;
+  }
+}

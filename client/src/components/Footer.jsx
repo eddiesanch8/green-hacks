@@ -1,38 +1,53 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/headFoot.css";
-import nativLogo from "../assets/nativLogo.png";
+import nativLogo from "/nativLogo.png";
 
-class Footer extends Component {
-  render() {
-    return (
-      <footer>
-        <div>
+function Footer() {
+  return (
+    <footer>
+      <div className="footerContainer">
+        <div className="footerLeftCol">
           <img src={nativLogo} alt="Personal Logo" id="Logo__nav" />
-          <p>
+          <p className="green-text text-darken-3">
             With Nativ, we try our best to help others improve the environment,
             one planted seed at a time!
           </p>
+          <div className="Socials">
+            <img src={insta} alt="Instagram" />
+            <img src={linkedin} alt="LinkedIn" />
+            <img src={tiktok} alt="TikTok" />
+          </div>
         </div>
-        <div>
+
+        <div className="footerRightCol">
           <ul>
-            <li>
-              <Link to="/" />
-              Home
+            <li
+              className="footerLinkHead green-text text-darken-4"
+              style={{ textDecoration: "underline" }}
+            >
+              Links
             </li>
-            <li>
-              <Link to="/" />
-              Survey
+            <li className="footerLinks">
+              <Link to="/" className="green-text text-darken-1">
+                Home
+              </Link>
             </li>
-            <li>
-              <Link to="/" />
-              About Us
+            <li className="footerLinks">
+              <Link to="/" className="green-text text-darken-1">
+                Survey
+              </Link>
+            </li>
+            <li className="footerLinks">
+              <Link to="/" className="green-text text-darken-1">
+                About Us
+              </Link>
             </li>
           </ul>
         </div>
-      </footer>
-    );
-  }
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
