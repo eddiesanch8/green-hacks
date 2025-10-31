@@ -52,7 +52,7 @@ export default function Signup() {
     }
 
     try {
-      const res = await fetch("https://green-hacks-production.up.railway.app", {
+      const res = await fetch("https://green-hacks-production.up.railway.app/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
