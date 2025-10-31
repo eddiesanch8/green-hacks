@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 export function SearchForm() {
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    userLocation: "",
+    user_city: "",
+    user_state: "",
+    user_zip: "",
     userSeason: "",
     userPlotSize: "",
     userExperience: "",
@@ -19,11 +22,10 @@ export function SearchForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    // combine location fields into one string
-    const userLocation = `${formData.user_city || ""}, ${
-      formData.user_state || ""
-    } ${formData.user_zip || ""}`.trim();
+    const userLocation =
+      `${formData.user_city}, ${formData.user_state} ${formData.user_zip}`.trim();
 
     const payload = {
       userLocation,
@@ -33,9 +35,13 @@ export function SearchForm() {
     };
 
     try {
+      const token = localStorage.getItem("access_token");
       const res = await fetch("http://localhost:3000/api/search", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify(payload),
       });
 
@@ -43,6 +49,8 @@ export function SearchForm() {
       navigate("/results", { state: { results: data } });
     } catch (err) {
       console.error("Error fetching plants:", err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -114,11 +122,19 @@ export function SearchForm() {
             <option value="Fall">Fall</option>
             <option value="Winter">Winter</option>
           </select>
+
           <button type="submit" className="form__btn">
             Submit
           </button>
         </form>
       </section>
+
+      {/* Loading Modal */}
+      {loading && (
+        <div className="modal-overlay--mine">
+          <div className="spinner"> </div>
+        </div>
+      )}
     </main>
   );
 }
