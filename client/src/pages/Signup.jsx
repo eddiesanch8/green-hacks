@@ -63,7 +63,7 @@ export default function Signup() {
       if (res.ok) {
         setMessage("Signup successful! Redirecting...");
         setIsError(false);
-        setTimeout(() => (window.location.href = "/"), 2000);
+        setTimeout(() => (window.location.href = "/login"), 2000);
       } else {
         setMessage(result.error || "Signup failed.");
         setIsError(true);

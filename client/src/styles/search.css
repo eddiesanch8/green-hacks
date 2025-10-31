@@ -8,7 +8,7 @@
   border-radius: 20px;
   width: 70%;
   height: auto;
-  background-image: url("/homebg.jpg");
+  background-image: url("../src/assets/homebg.jpg");
   background-size: 40% 100%;
   background-color: #ffffff;
   background-position: left center, right center;
@@ -30,6 +30,7 @@
 }
 .almanac__label {
   font-size: 1.1rem;
+  color: #477b34;
 }
 
 .form__btn {

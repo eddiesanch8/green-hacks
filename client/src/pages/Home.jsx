@@ -4,6 +4,7 @@ import heroVideo from "../assets/14620973_3840_2160_24fps.mp4";
 import feature1 from "../assets/feature1.jpg.png";
 import feature2 from "../assets/feature2.jpg.png";
 import feature3 from "../assets/feature3.jpg.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   useEffect(() => {
@@ -36,7 +37,10 @@ const Home = () => {
             Personalized AI guidance to help you plant native species, restore
             biodiversity, and heal the planet starting right where you are.
           </p>
-          <button className="cta-button">Join the Movement</button>
+          <Link to="/signup">
+            {" "}
+            <button className="cta-button">Join the Movement</button>{" "}
+          </Link>
         </div>
       </section>
 
