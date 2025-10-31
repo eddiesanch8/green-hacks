@@ -10,7 +10,7 @@ function Saved() {
     const fetchFavorites = async () => {
       try {
         const token = localStorage.getItem("access_token");
-        const res = await fetch("https://green-hacks-production.up.railway.app", {
+        const res = await fetch("https://green-hacks-production.up.railway.app/library", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
