@@ -20,10 +20,10 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={<NoLogNav />} />
-          <Route path="signup" element={<SignUpNav />} />
-          <Route path="login" element={<LoginNav />} />
-          <Route path="*" element={<LoggedInNav />} />
+        <Route path="/" element={<NoLogNav />} />
+        <Route path="signup" element={<SignUpNav />} />
+        <Route path="login" element={<LoginNav />} />
+        <Route path="*" element={<LoggedInNav />} />
       </Routes>
       <Routes>
         <Route path="/" element={<Home />} />

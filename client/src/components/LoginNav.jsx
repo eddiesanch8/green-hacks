@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../styles/headFoot.css'
+import '../styles/Navbar.css'
 import nativLogo from "/nativLogo.png"
 import { useState } from "react";
 
@@ -25,10 +25,10 @@ function LoginNav() {
                     <li className="nav__li center-align">
                     <Link to="/signup" className="nav__a center-align yellow-text text-darken-4" onClick={closeMenu}>SignUp</Link>
                     </li> <li className="nav__li center-align">
-                    <Link to="/aboutus" className="nav__a center-align green-text text-darken-4" onClick={closeMenu}>Why Nativ?</Link>
+                    <Link to="/aboutus" className="nav__a center-align green-text text-darken-4" onClick={closeMenu}>About Us</Link>
                     </li> <li className="nav__li center-align">
-                    <Link to="/whynative" className="nav__a center-align green-text text-darken-4" onClick={closeMenu}>About Us</Link>
-                    </li> 
+                    <Link to="/why-nativ" className="nav__a center-align green-text text-darken-4" onClick={closeMenu}>Why Nativ?</Link>
+                    </li>
                 </ul>
                 <div
                     className={`burger ${menuOpen ? 'active' : ''}`}

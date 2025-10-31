@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/headFoot.css";
-import nativLogo from "/nativLogo.png";
+import '../styles/Navbar.css'
+import nativLogo from "/nativLogo.png"
 import { useState } from "react";
 
 function LoggedInNav() {
