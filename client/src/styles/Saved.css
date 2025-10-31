@@ -1,13 +1,19 @@
 main h2 {
-    text-align: center;
+  text-align: center;
 }
 
 label {
-    max-width: 80%;
-    margin: 0 auto;
+  max-width: 80%;
+  margin: 0 auto;
 }
-
+.filter-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.select-wrapper {
+  min-width: 50%;
+}
 .select-wrapper input.select-dropdown {
-    /* max-width: 50%; */
-    align-items: center;
+  align-items: center;
 }
