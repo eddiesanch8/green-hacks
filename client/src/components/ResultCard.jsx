@@ -1,8 +1,9 @@
 import React from "react";
-import '../styles/ResultCard.css'
+import "../styles/ResultCard.css";
+import FavoriteButton from "./favoriteBtn";
 
-function ResultCard({plant}) {
-    let plantIcon;
+function ResultCard({ plant }) {
+  let plantIcon;
 
 switch (plant.type) {
         case "Tree":
@@ -39,7 +40,7 @@ switch (plant.type) {
                     <p><b>Zone: {plant.growingZones}</b></p>
                 </div>
                 <div className="bookmark__div">                    
-                    <i className="material-icons orange-text text-darken-2">bookmark</i>
+                   <FavoriteButton plant={plant} />
                 </div>
             </div>
             <div className="midSection">
@@ -57,8 +58,8 @@ switch (plant.type) {
             <div className="description"><b>Description:</b> {plant.description}</div>
             <div className="description"><b>Plant Care:</b> {plant.care}</div>
             <div className="description"><b>Fun Fact:</b> {plant.funFact}</div>
-        </div>
-    )
+        </div>      
+  );
 }
 
 export default ResultCard;

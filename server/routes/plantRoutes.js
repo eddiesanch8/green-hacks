@@ -1,9 +1,11 @@
 import express from "express";
-import { getAISeeds } from "../llm/llm.js"; //AI Prompt Response
+import { getAISeeds } from "../llm/llm.js";
+import authenticateToken from "../routes/authToken.js";
 
 const router = express.Router();
 
-router.post("/search", async (req, res) => {
+// Protect route with JWT middleware
+router.post("/search", authenticateToken, async (req, res) => {
   const { userLocation, userSeason, userPlotSize, userExperience } = req.body;
 
   try {
@@ -13,11 +15,19 @@ router.post("/search", async (req, res) => {
       userPlotSize,
       userExperience
     );
-    res.json(data); //Turns the Claude AI's response into a JSON
+    res.json(data);
   } catch (error) {
-    console.log("Error:", error);
-    res.status(500).json({ error: "Failed to generate joke" });
+    console.error("Error generating seeds:", error);
+    res.status(500).json({ error: "Failed to generate seeds" });
   }
+});
+
+// Optional: custom error handling for JWT middleware
+router.use((err, req, res, next) => {
+  if (err.name === "UnauthorizedError") {
+    return res.status(401).json({ error: "Invalid or missing token" });
+  }
+  next(err);
 });
 
 export default router;

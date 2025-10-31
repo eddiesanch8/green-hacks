@@ -5,15 +5,15 @@ import nativLogo from "/nativLogo.png"
 import { useState } from "react";
 
 function LoggedInNav() {
-    const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const closeMenu = () => {
-        setMenuOpen(false);
-    };
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
-    const toggleMenu = () => {
-        setMenuOpen((prev) => !prev);
-    };
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
 
         return (
             <header className="header">
@@ -22,9 +22,15 @@ function LoggedInNav() {
                     <img src={nativLogo} alt="Personal Logo" id="Logo__nav" />
                 </Link>
                 <ul className={`nav-menu right ${menuOpen ? 'active' : ''}`}>
-                    <li className="nav__li center-align">
-                        <Link to="/test" className="nav__a center-align yellow darken-4" onClick={closeMenu}>Survey</Link>
-                    </li> 
+                   <li className="nav__li center-align">
+                    <Link
+                      to="/search"
+                      className="nav__a center-align yellow darken-4"
+                      onClick={closeMenu}
+                    >
+                      Sprout Finder
+                    </Link>
+                  </li>
                     <li className="nav__li center-align">
                         <Link to="/aboutus" className="nav__a center-align green-text text-darken-4" onClick={closeMenu}>About Us</Link>
                     </li> 
@@ -41,6 +47,5 @@ function LoggedInNav() {
             </header>
         )
     }
-
 
 export default LoggedInNav;

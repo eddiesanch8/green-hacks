@@ -76,8 +76,8 @@ export default function Signup() {
   };
 
   return (
-    <main>
-      <h1>Create Your Account</h1>
+    <main className="main-container">
+      <h1 className="main__header">Create Your Account</h1>
       <div className="signup-container">
         <form id="signupForm" onSubmit={handleSubmit}>
           <label htmlFor="first_name">First Name</label>

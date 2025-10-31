@@ -1,8 +1,9 @@
 import React from "react";
-import '../styles/seedpack.css'
+import "../styles/seedpack.css";
+import FavoriteButton from "./favoriteBtn";
 
-function SeedPack({plant}) {
-    let plantIcon;
+function SeedPack({ plant }) {
+  let plantIcon;
 
     switch (plant.type) {
         case "Tree":
@@ -45,10 +46,9 @@ function SeedPack({plant}) {
                     <li><b>Care:</b> {plant.care}</li>
                 </ul>
                 </div>
-            <div className="favorite__div"><i className="material-icons yellow-text text-darken-4">bookmark</i></div>
+            <div className="favorite__div"><FavoriteButton plant={plant} /></div>
         </div>
     )
 }
-
 
 export default SeedPack;
