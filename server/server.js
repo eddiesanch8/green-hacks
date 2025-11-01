@@ -26,14 +26,10 @@ const initializeTables = async () => {
   try {
     // Create users table FIRST
     await createTable(userSchema);
-    console.log("Users table initialized");
 
     // Then create tables that reference users
     await createTable(librarySchema);
-    console.log("Library table initialized");
-  } catch (error) {
-    console.error("Error initializing tables:", error);
-  }
+  } catch (error) {}
 };
 
 // Call this before starting the server

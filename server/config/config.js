@@ -12,6 +12,4 @@ const dbConfig = {
       : false,
 };
 
-console.log(process.env.MYSQLPASSWORD);
-
 export default dbConfig;
