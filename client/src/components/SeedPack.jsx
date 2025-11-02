@@ -42,7 +42,7 @@ function SeedPack({ plant }) {
   }
 
   return (
-    <div className="green lighten-2">
+    <div className="seed-pack">
       <div className="plantIcon__div">
         <div>{plantIcon}</div>
       </div>

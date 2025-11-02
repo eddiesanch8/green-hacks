@@ -17,7 +17,7 @@ async function getAISeeds(
 ) {
   try {
     const message = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-haiku-4-5-20251001",
       max_tokens: 1500,
       system: `You are an expert botanist and sustainable agriculture advisor specializing in native plants and biodiversity restoration.
 

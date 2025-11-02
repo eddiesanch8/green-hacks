@@ -90,6 +90,7 @@ export function SearchForm() {
             id="user_zip"
             name="user_zip"
             className="almanac__input"
+            placeholder="eg: 28269"
             onChange={handleChange}
           />
 
