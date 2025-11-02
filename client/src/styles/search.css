@@ -8,7 +8,7 @@
   border-radius: 20px;
   width: 70%;
   height: auto;
-  background-image: url("../src/assets/homebg.jpg");
+  background-image: url("/homebg.jpg");
   background-size: 40% 100%;
   background-color: #ffffff;
   background-position: left center, right center;
@@ -45,7 +45,7 @@
 
 .form__btn:hover {
   transform: scale(1.01);
-  background-color: #477b34ce;
+  background-color: #477b34ce !important;
 }
 .modal-overlay--mine {
   position: fixed;

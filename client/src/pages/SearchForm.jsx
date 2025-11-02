@@ -66,6 +66,7 @@ export function SearchForm() {
             name="user_city"
             className="almanac__input"
             onChange={handleChange}
+            placeholder="eg: Charlotte"
           />
 
           <label className="almanac__label" htmlFor="user_state">
@@ -75,6 +76,7 @@ export function SearchForm() {
             id="user_state"
             name="user_state"
             className="almanac__input"
+            placeholder="eg: NC"
             onChange={handleChange}
           />
 
