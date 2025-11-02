@@ -1,21 +1,25 @@
 import React from "react";
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
+import instagram from "/instagram.png";
+import tiktok from "/linkedin.png";
+import linkednIn from "/tiktok.png";
+import nativLogo from "/nativLogo.png";
 
 function Footer() {
   return (
     <footer>
       <div className="footerContainer">
         <div className="footerLeftCol">
-          <img src="/nativLogo.png" alt="Personal Logo" id="Logo__nav" />
+          <img src={nativLogo} alt="Personal Logo" id="Logo__nav" />
           <p className="green-text text-darken-3">
             With Nativ, we try our best to help others improve the environment,
             one planted seed at a time!
           </p>
           <div className="Socials">
-            <img src="/instagram.png" alt="Instagram" />
-            <img src="/linkedin.png" alt="LinkedIn" />
-            <img src="/tiktok.png" alt="TikTok" />
+            <img src={instagram} alt="Instagram" />
+            <img src={linkednIn} alt="LinkedIn" />
+            <img src={tiktok} alt="TikTok" />
           </div>
         </div>
 

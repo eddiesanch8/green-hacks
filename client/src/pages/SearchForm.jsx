@@ -27,7 +27,7 @@ export function SearchForm() {
     const userLocation =
       `${formData.user_city}, ${formData.user_state} ${formData.user_zip}`.trim();
 
-    const payload = {
+    const userInput = {
       userLocation,
       userSeason: formData.userSeason,
       userPlotSize: formData.userPlotSize,
@@ -36,14 +36,17 @@ export function SearchForm() {
 
     try {
       const token = localStorage.getItem("access_token");
-      const res = await fetch("https://green-hacks-production.up.railway.app/api/search", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        "https://green-hacks-production.up.railway.app/api/search",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(userInput),
+        }
+      );
 
       const data = await res.json();
       navigate("/results", { state: { results: data } });
