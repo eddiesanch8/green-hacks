@@ -48,7 +48,7 @@ export default function FavoriteButton({ plant }) {
     <button className="favorite-btn" onClick={handleClick} disabled={loading}>
       <i
         className="material-icons"
-        style={{ color: isFavorite ? "#FF5722" : "#888" }}
+        style={{ color: isFavorite ? "#2A9D8F" : "#888" }}
       >
         {isFavorite ? "bookmark" : "bookmark_border"}
       </i>

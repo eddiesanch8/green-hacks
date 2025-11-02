@@ -1,70 +1,75 @@
 .cardParent {
-    max-width: 50rem;
-    padding: 1rem;
-    border-radius: 2rem;
-    margin: 0 auto;
-    border: 3px solid green;
-    margin-top: 2rem;
+  max-width: 50rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 0 auto;
+  border: 3px solid green;
+  margin-top: 2rem;
+}
+
+.favorite-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .topSection {
-    display: flex;
-    justify-content: space-between;
-    padding: .8rem;
-    align-items: center;  
-    /* border: 1px solid rgb(128, 0, 0); */
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+  align-items: center;
+  /* border: 1px solid rgb(128, 0, 0); */
 }
 
 .bookmark__div i {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .midSection {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
-    align-items: center;
-    /* border: 1px solid rgb(29, 219, 162); */
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  /* border: 1px solid rgb(29, 219, 162); */
 }
 
 .infoList {
-    width: 55%;
-    /* border: 1px solid rgb(128, 0, 105); */
+  width: 55%;
+  /* border: 1px solid rgb(128, 0, 105); */
 }
 
 .description {
-    padding: .8rem;
-    /* border: 1px solid rgb(237, 220, 33); */
+  padding: 0.8rem;
+  /* border: 1px solid rgb(237, 220, 33); */
 }
 
 .IMG {
-    /* border: 1px solid rgb(237, 220, 33); */
-    width: 10%;
-    text-align: center;
+  /* border: 1px solid rgb(237, 220, 33); */
+  width: 10%;
+  text-align: center;
 }
 
-.IMG .material-icons{
-    font-size: 8rem;
-    text-align: center;
+.IMG .material-icons {
+  font-size: 8rem;
+  text-align: center;
 }
 
 @media screen and (max-width: 425px) {
-    .midSection {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .midSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .infoList {
-        width: 100%;
-    }   
-    
-    .IMG .material-icons{
-        width: 100%;
-        font-size: 5rem;
-        text-align: center;
-    }
+  .infoList {
+    width: 100%;
+  }
+
+  .IMG .material-icons {
+    width: 100%;
+    font-size: 5rem;
+    text-align: center;
+  }
 }
