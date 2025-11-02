@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
-import instagram from "/instagram.png";
-import tiktok from "/linkedin.png";
-import linkednIn from "/tiktok.png";
+import instagram from "../assets/instagram.webp";
+import tiktok from "../assets/tiktok.webp";
+import linkednIn from "../assets/linkedin.webp";
 import nativLogo from "/nativLogo.png";
 
 function Footer() {
