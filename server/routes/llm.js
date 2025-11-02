@@ -23,7 +23,7 @@ async function getAISeeds(
 
 Requirements:
 - Focus only on native and regionally appropriate species for the user's location
-- Suggest 5 different plants, each unique in type and growing requirements
+- Suggest 5 different plants, trees or vegetables depending on area available togrow each unique in type and growing requirements
 - Tailor recommendations to the user's experience level (e.g., low-maintenance plants for beginners)
 - Care instructions should be 2 concise sentences
 - If exact native plants are unknown, select closely related species from the same USDA or regional planting zone
