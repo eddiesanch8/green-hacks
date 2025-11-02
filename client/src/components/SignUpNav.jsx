@@ -16,7 +16,7 @@ function SignUpNav() {
 
   return (
     <header className="header">
-      <nav className="navbar lime lighten-5">
+      <nav className="navbar">
         <Link to="/" className="headLogo__a" onClick={closeMenu}>
           <img
             src="../src/assets/nativLogo.png"
@@ -28,7 +28,7 @@ function SignUpNav() {
           <li className="nav__li center-align">
             <Link
               to="/login"
-              className="nav__a center-align yellow-text text-darken-4"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
               Login
@@ -37,19 +37,10 @@ function SignUpNav() {
           <li className="nav__li center-align">
             <Link
               to="/aboutus"
-              className="nav__a center-align green-text text-darken-4"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
               About Us
-            </Link>
-          </li>{" "}
-          <li className="nav__li center-align">
-            <Link
-              to="/why-nativ"
-              className="nav__a center-align green-text text-darken-4"
-              onClick={closeMenu}
-            >
-              Why Nativ?
             </Link>
           </li>
         </ul>
@@ -57,9 +48,9 @@ function SignUpNav() {
           className={`burger ${menuOpen ? "active" : ""}`}
           onClick={toggleMenu}
         >
-          <span className="bar green darken-4"></span>
-          <span className="bar green darken-4"></span>
-          <span className="bar green darken-4"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
       </nav>
     </header>

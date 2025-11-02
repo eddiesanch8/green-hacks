@@ -10,39 +10,43 @@ function Footer() {
           <img
             src="../src/assets/nativLogo.png"
             alt="Personal Logo"
-            id="Logo__nav"
+            id="Logo__footer"
           />
-          <p className="green-text text-darken-3">
-            With Nativ, we try our best to help others improve the environment,
-            one planted seed at a time!
+          <p>
+            With Nativ, we push to help others improve the environment, one planted seed at a time!
           </p>
           <div className="Socials">
-            <img src="../src/assets/instagram.png" alt="Instagram" />
-            <img src="../src/assets/linkedin.png" alt="LinkedIn" />
-            <img src="../src/assets/tiktok.png" alt="TikTok" />
+            <img src="../src/assets/instagram.webp" alt="Instagram" />
+            <img src="../src/assets/linkedin.webp" alt="LinkedIn" />
+            <img src="../src/assets/tiktok.webp" alt="TikTok" />
           </div>
         </div>
 
         <div className="footerRightCol">
-          <ul>
+          <ul className="footer__ul-home">
             <li
-              className="footerLinkHead green-text text-darken-4"
+              className="footerLinkHead"
               style={{ textDecoration: "underline" }}
             >
               Links
             </li>
             <li className="footerLinks">
-              <Link to="/" className="green-text text-darken-1">
+              <Link to="/">
                 Home
               </Link>
             </li>
             <li className="footerLinks">
-              <Link to="/signup" className="green-text text-darken-1">
-                Signup
+              <Link to="/login">
+                Log In
               </Link>
             </li>
             <li className="footerLinks">
-              <Link to="/" className="green-text text-darken-1">
+              <Link to="/signup">
+                Sign Up
+              </Link>
+            </li>
+            <li className="footerLinks">
+              <Link to="/aboutus">
                 About Us
               </Link>
             </li>

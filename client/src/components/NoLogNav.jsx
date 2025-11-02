@@ -16,7 +16,7 @@ function NoLogNav() {
 
   return (
     <header className="header">
-      <nav className="navbar lime lighten-5">
+      <nav className="navbar">
         <Link to="/" className="headLogo__a" onClick={closeMenu}>
           <img
             src="../src/assets/nativLogo.png"
@@ -25,10 +25,10 @@ function NoLogNav() {
           />
         </Link>
         <ul className={`nav-menu right ${menuOpen ? "active" : ""}`}>
-          <li className="nav__li center-align">
+          <li className="nav__li">
             <Link
               to="/login"
-              className="nav__a center-align green-text text-darken-4"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
               Login
@@ -37,7 +37,7 @@ function NoLogNav() {
           <li className="nav__li center-align">
             <Link
               to="/signup"
-              className="nav__a center-align green-text text-darken-4"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
               Sign Up
@@ -46,7 +46,7 @@ function NoLogNav() {
           <li className="nav__li center-align">
             <Link
               to="/aboutus"
-              className="nav__a center-align green-text text-darken-4"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
               About Us
@@ -57,9 +57,9 @@ function NoLogNav() {
           className={`burger ${menuOpen ? "active" : ""}`}
           onClick={toggleMenu}
         >
-          <span className="bar green darken-4"></span>
-          <span className="bar green darken-4"></span>
-          <span className="bar green darken-4"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
       </nav>
     </header>
