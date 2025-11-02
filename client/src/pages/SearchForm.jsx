@@ -27,7 +27,7 @@ export function SearchForm() {
     const userLocation =
       `${formData.user_city}, ${formData.user_state} ${formData.user_zip}`.trim();
 
-    const payload = {
+    const userInput = {
       userLocation,
       userSeason: formData.userSeason,
       userPlotSize: formData.userPlotSize,
@@ -36,14 +36,17 @@ export function SearchForm() {
 
     try {
       const token = localStorage.getItem("access_token");
-      const res = await fetch("https://green-hacks-production.up.railway.app/api/search", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        "https://green-hacks-production.up.railway.app/api/search",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(userInput),
+        }
+      );
 
       const data = await res.json();
       navigate("/results", { state: { results: data } });
@@ -66,6 +69,7 @@ export function SearchForm() {
             name="user_city"
             className="almanac__input"
             onChange={handleChange}
+            placeholder="eg: Charlotte"
           />
 
           <label className="almanac__label" htmlFor="user_state">
@@ -75,6 +79,7 @@ export function SearchForm() {
             id="user_state"
             name="user_state"
             className="almanac__input"
+            placeholder="eg: NC"
             onChange={handleChange}
           />
 

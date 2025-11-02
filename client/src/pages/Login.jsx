@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
@@ -36,7 +38,8 @@ export default function Login() {
         localStorage.setItem("first_name", result.first_name);
         localStorage.setItem("userID", result.userID);
 
-        setTimeout(() => (window.location.href = "/search"), 2000);
+        // Smooth client-side redirect (no reload)
+        setTimeout(() => navigate("/search"), 1500);
       } else {
         setMessage(result.error || "Invalid credentials");
         setIsError(true);

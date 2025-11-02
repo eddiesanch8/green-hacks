@@ -4,7 +4,7 @@ import ResultCard from "../components/ResultCard";
 
 function Results() {
   const location = useLocation();
-  const plants = location.state?.results || []; // fallback to empty array
+  const plants = location.state?.results || [];
 
   if (!plants.length) {
     return <p>No results found. Please try again.</p>;

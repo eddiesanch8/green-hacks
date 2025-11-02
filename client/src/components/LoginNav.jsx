@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import { useState } from "react";
+import nativLogo from "/nativLogo.png";
 
 function LoginNav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,11 +19,7 @@ function LoginNav() {
     <header className="header">
       <nav className="navbar">
         <Link to="/" className="headLogo__a" onClick={closeMenu}>
-          <img
-            src="../src/assets/nativLogo.png"
-            alt="Personal Logo"
-            id="Logo__nav"
-          />
+          <img src={nativLogo} alt="Personal Logo" id="Logo__nav" />
         </Link>
         <ul className={`nav-menu right ${menuOpen ? "active" : ""}`}>
           <li className="nav__li center-align">
