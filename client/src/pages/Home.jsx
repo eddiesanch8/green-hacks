@@ -146,7 +146,10 @@ const Home = () => {
           Whether you have a balcony or a backyard, your plants can make an
           impact. Join Nativ and restore biodiversity one seed at a time.
         </p>
-        <button className="cta-button">Get Started</button>
+        <Link to="/signup">
+          {" "}
+          <button className="cta-button">Get Started</button>
+        </Link>
       </section>
     </div>
   );

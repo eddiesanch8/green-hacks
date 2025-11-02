@@ -1,13 +1,12 @@
-.green.lighten-2 {
+.seed-pack {
   display: flex;
-  align-items: center;
-  justify-content: space-between; 
-  border-radius: 0.33rem;
-  height: auto;
+  border-radius: 20px;
   max-width: 80%;
-  margin: 1.5rem auto 0;
+  margin: 1.5rem auto;
   padding: 1.5rem;
-  gap: 1rem; 
+  background-color: #fff;
+  box-shadow: rgb(135 135 156 / 20%) -7px 6px 8px 2px;
+  gap: 1rem;
 }
 
 .plantIcon__div {
@@ -38,12 +37,9 @@
 }
 
 .favorite__div {
-  flex: 0 0 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
-
 .favorite__div i {
   font-size: 2rem;
 }

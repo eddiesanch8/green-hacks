@@ -17,6 +17,24 @@
   justify-content: flex-end;
   box-shadow: rgb(126 126 135 / 23%) -3px 1px 9px 3px;
 }
+@media screen and (max-width: 900px) {
+  .form-container {
+    background-image: none;
+    background-size: 40% 100%;
+    background-color: #ffffff;
+    background-position: top top, right center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgb(126 126 135 / 23%) -3px 1px 9px 3px;
+  }
+
+  .almanac-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+  }
+}
 
 .almanac-form {
   width: 50%;
@@ -62,7 +80,7 @@
 
 .spinner {
   border: 8px solid #f3f3f3;
-  border-top: 8px solid #288d2f;
+  border-top: 8px solid #2a9d8f;
   border-radius: 50%;
   width: 60px;
   height: 60px;
