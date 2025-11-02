@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { AuthFetch } from "../utils/api";
 
 export default function FavoriteButton({ plant }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // check if this plant is already favorited
+  // Initialize favorite state
   useEffect(() => {
     const checkFavorite = async () => {
       try {
         const favorites = await AuthFetch("/library");
-        const exists = favorites.some((fav) => fav.plant_name === plant.name);
-        setIsFavorite(exists);
+        setIsFavorite(favorites.some((fav) => fav.plant_name === plant.name));
       } catch (err) {
-        console.error(err);
+        console.error("Error fetching favorites:", err);
       }
     };
     checkFavorite();
   }, [plant]);
 
-  const handleClick = async () => {
+  const toggleFavorite = async () => {
     setLoading(true);
     try {
       if (isFavorite) {
@@ -45,7 +44,12 @@ export default function FavoriteButton({ plant }) {
   };
 
   return (
-    <button className="favorite-btn" onClick={handleClick} disabled={loading}>
+    <button
+      className="favorite-btn"
+      onClick={toggleFavorite}
+      disabled={loading}
+      title={isFavorite ? "Remove from favorites" : "Add to favorites"}
+    >
       <i
         className="material-icons"
         style={{ color: isFavorite ? "#2A9D8F" : "#888" }}

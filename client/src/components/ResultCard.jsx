@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/ResultCard.css";
 import FavoriteButton from "./favoriteBtn";
 

@@ -1,4 +1,4 @@
-const API_BASE = "https://courteous-laughter-production.up.railway.app";
+const API_BASE = "https://green-hacks-production.up.railway.app";
 
 export async function AuthFetch(endpoint, options = {}) {
   const token = localStorage.getItem("access_token");
