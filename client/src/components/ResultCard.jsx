@@ -2,44 +2,6 @@ import "../styles/ResultCard.css";
 import FavoriteButton from "./favoriteBtn";
 
 function ResultCard({ plant }) {
-  let plantIcon;
-
-  switch (plant.type) {
-    case "Tree":
-      plantIcon = (
-        <i className="material-icons green-text text-darken-3">park</i>
-      );
-      break;
-    case "Shrub":
-      plantIcon = (
-        <i className="material-icons green-text text-darken-1">nature</i>
-      );
-      break;
-    case "Flower":
-      plantIcon = (
-        <i className="material-icons yellow-text text-darken-4">
-          local_florist
-        </i>
-      );
-      break;
-    case "Fern":
-    case "Succulent":
-      plantIcon = <i className="material-icons green-text">spa</i>;
-      break;
-    case "Groundcover":
-      plantIcon = <i className="material-icons green-text">grass</i>;
-      break;
-    case "Vegetable":
-      plantIcon = <i className="material-icons red-text darken-1">nutrition</i>;
-      break;
-    case "Herb":
-    case "Vine":
-      plantIcon = <i className="material-icons green-text">eco</i>;
-      break;
-    default:
-      plantIcon = <i className="material-icons green-text">potted_plant</i>;
-  }
-
   return (
     <div className="cardParent  lighten-3">
       <div className="topSection">
@@ -53,7 +15,7 @@ function ResultCard({ plant }) {
         </div>
       </div>
       <div className="midSection">
-        <div className="IMG">{plantIcon}</div>
+        <img className="IMG" src={plant.photo} alt={plant.name} />
         <div className="infoList">
           <ul>
             <li>
