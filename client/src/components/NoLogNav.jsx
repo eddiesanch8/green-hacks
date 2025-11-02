@@ -16,7 +16,7 @@ function NoLogNav() {
 
   return (
     <header className="header">
-      <nav className="navbar lime lighten-5">
+      <nav className="navbar lime lighten-5 linear-gradient">
         <Link to="/" className="headLogo__a" onClick={closeMenu}>
           <img
             src="../src/assets/nativLogo.png"
@@ -28,7 +28,7 @@ function NoLogNav() {
           <li className="nav__li center-align">
             <Link
               to="/login"
-              className="nav__a center-align green-text text-darken-4"
+              className="nav__a center-align white-text text-darken-4"
               onClick={closeMenu}
             >
               Login
@@ -37,7 +37,7 @@ function NoLogNav() {
           <li className="nav__li center-align">
             <Link
               to="/signup"
-              className="nav__a center-align green-text text-darken-4"
+              className="nav__a center-align white-text text-darken-4"
               onClick={closeMenu}
             >
               Sign Up
@@ -46,7 +46,7 @@ function NoLogNav() {
           <li className="nav__li center-align">
             <Link
               to="/aboutus"
-              className="nav__a center-align green-text text-darken-4"
+              className="nav__a center-align white-text text-darken-4"
               onClick={closeMenu}
             >
               About Us

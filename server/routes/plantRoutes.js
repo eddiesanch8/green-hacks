@@ -1,5 +1,6 @@
 import express from "express";
 import { getAISeeds } from "./llm.js";
+import { getPlantPhoto } from "./photoLibrary.js";
 import authenticateToken from "../routes/authToken.js";
 
 const router = express.Router();
@@ -9,13 +10,27 @@ router.post("/search", authenticateToken, async (req, res) => {
   const { userLocation, userSeason, userPlotSize, userExperience } = req.body;
 
   try {
-    const data = await getAISeeds(
+    // Get AI-generated seed recommendations
+    const seedData = await getAISeeds(
       userLocation,
       userSeason,
       userPlotSize,
       userExperience
     );
-    res.json(data);
+
+    // Fetch photos for each plant in the array
+    // const plantsWithPhotos = await Promise.all(
+    //   seedData.map(async (plant) => {
+    //     // Use scientific name for more accurate results
+    //     const photoData = await getPlantPhoto(plant.scientificName);
+    //     return {
+    //       ...plant,
+    //       photo: photoData?.imageUrl || null,
+    //     };
+    //   })
+    // );
+
+    res.json(seedData);
   } catch (error) {
     console.error("Error generating seeds:", error);
     res.status(500).json({ error: "Failed to generate seeds" });
