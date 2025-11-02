@@ -45,9 +45,9 @@
 }
 
 .IMG {
-  /* border: 1px solid rgb(237, 220, 33); */
-  width: 10%;
+  width: 25%;
   text-align: center;
+  border-radius: 15px;
 }
 
 .IMG .material-icons {

@@ -1,19 +1,26 @@
 .seed-pack {
   display: flex;
   border-radius: 20px;
-  max-width: 80%;
+  width: 70%;
+  /* max-width: 55%; */
   margin: 1.5rem auto;
   padding: 1.5rem;
   background-color: #fff;
   box-shadow: rgb(135 135 156 / 20%) -7px 6px 8px 2px;
   gap: 1rem;
+  flex-direction: column;
+}
+
+.fav-img {
+  width: 30%;
+  border: 1px solid #393d3ed4;
+  border-radius: 20px;
+  max-width: 55%;
 }
 
 .plantIcon__div {
-  flex: 0 0 60px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .plantIcon__div i {
@@ -22,7 +29,9 @@
 }
 
 .plantDesc__div {
-  flex: 1;
+  /* flex: 1; */
+  padding: 10px;
+  align-self: center;
 }
 
 .plantDesc__div ul {
