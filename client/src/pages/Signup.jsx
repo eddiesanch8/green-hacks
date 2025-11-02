@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "../styles/Signup.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -63,7 +66,8 @@ export default function Signup() {
       if (res.ok) {
         setMessage("Signup successful! Redirecting...");
         setIsError(false);
-        setTimeout(() => (window.location.href = "/login"), 2000);
+        // smooth redirect without reload
+        setTimeout(() => navigate("/login"), 1500);
       } else {
         setMessage(result.error || "Signup failed.");
         setIsError(true);

@@ -7,19 +7,15 @@ function Footer() {
     <footer>
       <div className="footerContainer">
         <div className="footerLeftCol">
-          <img
-            src="../src/assets/nativLogo.png"
-            alt="Personal Logo"
-            id="Logo__nav"
-          />
+          <img src="/nativLogo.png" alt="Personal Logo" id="Logo__nav" />
           <p className="green-text text-darken-3">
             With Nativ, we try our best to help others improve the environment,
             one planted seed at a time!
           </p>
           <div className="Socials">
-            <img src="../src/assets/instagram.png" alt="Instagram" />
-            <img src="../src/assets/linkedin.png" alt="LinkedIn" />
-            <img src="../src/assets/tiktok.png" alt="TikTok" />
+            <img src="/instagram.png" alt="Instagram" />
+            <img src="/linkedin.png" alt="LinkedIn" />
+            <img src="/tiktok.png" alt="TikTok" />
           </div>
         </div>
 
