@@ -17,7 +17,7 @@ function LoggedInNav() {
 
   return (
     <header className="header">
-      <nav className="navbar lime lighten-5">
+      <nav className="navbar">
         <Link to="/" className="headLogo__a" onClick={closeMenu}>
           <img src={nativLogo} alt="Personal Logo" id="Logo__nav" />
         </Link>
@@ -25,7 +25,7 @@ function LoggedInNav() {
           <li className="nav__li center-align">
             <Link
               to="/search"
-              className="nav__a center-align yellow darken-4"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
               Sprout Finder
@@ -33,20 +33,20 @@ function LoggedInNav() {
           </li>
           <li className="nav__li center-align">
             <Link
-              to="/aboutus"
-              className="nav__a center-align green-text text-darken-4"
+              to="/favorites"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
-              About Us
+              Favorites
             </Link>
           </li>
           <li className="nav__li center-align">
             <Link
-              to="/favorites"
-              className="nav__a center-align green-text text-darken-4"
+              to="/aboutus"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
-              Favorites
+              About Us
             </Link>
           </li>
         </ul>
@@ -54,9 +54,9 @@ function LoggedInNav() {
           className={`burger ${menuOpen ? "active" : ""}`}
           onClick={toggleMenu}
         >
-          <span className="bar green darken-4"></span>
-          <span className="bar green darken-4"></span>
-          <span className="bar green darken-4"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
       </nav>
     </header>

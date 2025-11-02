@@ -17,7 +17,7 @@ function LoginNav() {
 
   return (
     <header className="header">
-      <nav className="navbar lime lighten-5">
+      <nav className="navbar">
         <Link to="/" className="headLogo__a" onClick={closeMenu}>
           <img src={nativLogo} alt="Personal Logo" id="Logo__nav" />
         </Link>
@@ -25,16 +25,16 @@ function LoginNav() {
           <li className="nav__li center-align">
             <Link
               to="/signup"
-              className="nav__a center-align yellow-text text-darken-4"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
-              SignUp
+              Sign Up
             </Link>
           </li>
           <li className="nav__li center-align">
             <Link
               to="/aboutus"
-              className="nav__a center-align green-text text-darken-4"
+              className="nav__a center-align"
               onClick={closeMenu}
             >
               About Us
@@ -45,9 +45,9 @@ function LoginNav() {
           className={`burger ${menuOpen ? "active" : ""}`}
           onClick={toggleMenu}
         >
-          <span className="bar green darken-4"></span>
-          <span className="bar green darken-4"></span>
-          <span className="bar green darken-4"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
       </nav>
     </header>

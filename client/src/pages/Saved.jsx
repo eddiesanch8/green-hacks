@@ -33,12 +33,12 @@ function Saved() {
   }, [plantFilter]);
 
   const filteredPlants = plants.filter((plant) =>
-    plantFilter ? plant.type == plantFilter : true
+    plantFilter ? plant.plant_details.season == plantFilter : true
   );
 
   return (
     <main>
-      <h2>Your Saved Seeds!</h2>
+      <h2>Your Favorite Plants!</h2>
       <label className="filter-label" htmlFor="plantFiltering">
         Plant Type:
         <select
@@ -47,16 +47,10 @@ function Saved() {
           onChange={(e) => setPlantFilter(e.target.value)}
         >
           <option value="">All</option>
-          <option value="Tree">Trees</option>
-          <option value="Shrub">Shrubs</option>
-          <option value="Flower">Flowers</option>
-          <option value="Fern">Ferns</option>
-          <option value="Groundcover">Groundcover</option>
-          <option value="Vegetable">Vegetables</option>
-          <option value="Herb">Herbs</option>
-          <option value="Vine">Vines</option>
-          <option value="Succulent">Succulents</option>
-          <option value="Cactus">Cacti</option>
+          <option value="Spring">Spring</option>
+          <option value="Summer">Summer</option>
+          <option value="Fall">Fall</option>
+          <option value="Winter">Winter</option>
         </select>
       </label>
 

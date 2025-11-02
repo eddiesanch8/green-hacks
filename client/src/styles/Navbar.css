@@ -32,7 +32,7 @@ nav,
   position: relative;
   z-index: 1001;
   height: 7rem;
-  background-color: transparent;
+  background: linear-gradient(0.25turn, #007D80, #005F61, #004A4D, #003C3D, #009E89);
 }
 
 .burger {
@@ -49,8 +49,8 @@ nav,
 }
 
 #Logo__nav {
-  height: 7rem;
-  padding-top: 2rem;
+    padding-top: 2rem;
+    height: 8rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -80,8 +80,7 @@ nav,
       visibility 0s linear 0.3s;
     z-index: 2000;
     overflow-y: hidden;
-    background-color: #419c4c;
-    color: #f9fbe7;
+    background: linear-gradient(0.25turn, #007D80, #005F61, #004A4D, #003C3D, #009E89);
   }
 
   .nav-menu.active {
@@ -94,22 +93,22 @@ nav,
   }
 
   .nav__li {
-    margin: 1rem 0;
     display: block;
-    background-color: none;
   }
 
   .nav__li a {
     text-align: center;
-  }
-
-  .nav__li a:hover {
-    color: #29a838;
+    color: #E9F5F3;
+    border: 1px solid #E9F5F3;
   }
 
   .burger {
     display: block;
     cursor: pointer;
+  }
+
+  .bar {
+    background-color: #E9F5F3;
   }
 
   .burger.active .bar:nth-child(2) {
@@ -125,6 +124,6 @@ nav,
   }
 
   #Logo__nav {
-    height: 5rem;
+    height: 6rem;
   }
 }
