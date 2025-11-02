@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "host": "npx http-server ./dist",
-    "start": "vite",
+    "start": "npx http-server ./dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
