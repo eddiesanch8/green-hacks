@@ -23,7 +23,7 @@ export default function AboutUs() {
     },
     {
       name: "Eddie Millsaps Jr",
-      role: "Lead Developer",
+      role: "Front End Engineer",
       bio: "Develops long-term organizational strategies to expand Nativs’ impact on local communities and environmental sustainability. Guides partnerships with schools, local farms, and environmental organizations. Monitors organizational goals, metrics, and mission alignment.",
       image: eddieImage,
     },
@@ -35,7 +35,7 @@ export default function AboutUs() {
     },
     {
       name: "Eduardo Sanchez",
-      role: "Lead Software",
+      role: "Software Developer",
       bio: "Leads the development of all digital tools and platforms for Nativs. Oversees website, app, AI integration, and digital infrastructure. Ensures the organization’s technology is scalable, secure, and efficient.",
       image: eduardoImage,
     },
