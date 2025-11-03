@@ -20,24 +20,28 @@ export default function AboutUs() {
       role: "Creative Director",
       bio: "Leads all creative initiatives, branding, and user experience across Nativs. Ensures the organization’s visual identity and content resonate with its mission of promoting biodiversity and sustainable agriculture. Oversees educational materials, outreach campaigns, and engagement strategies.",
       image: helenaImage,
+      linkedIn: "https://www.linkedin.com/in/helena-lian/",
     },
     {
       name: "Eddie Millsaps Jr",
       role: "Front End Engineer",
       bio: "Develops long-term organizational strategies to expand Nativs’ impact on local communities and environmental sustainability. Guides partnerships with schools, local farms, and environmental organizations. Monitors organizational goals, metrics, and mission alignment.",
       image: eddieImage,
+      linkedIn: "https://www.linkedin.com/in/eddiemillsapsjr/",
     },
     {
       name: "Kevin Anderson",
       role: "AI Engineer",
       bio: "Manages all data-driven initiatives and AI applications. Designs algorithms for sustainable planting suggestions and biodiversity tracking. Provides insights from environmental and user data to guide the organization’s decisions.",
       image: kevinImage,
+      linkedIn: "https://www.linkedin.com/in/kevin-anderson-06a09929b/",
     },
     {
       name: "Eduardo Sanchez",
       role: "Software Developer",
       bio: "Leads the development of all digital tools and platforms for Nativs. Oversees website, app, AI integration, and digital infrastructure. Ensures the organization’s technology is scalable, secure, and efficient.",
       image: eduardoImage,
+      linkedIn: "https://www.linkedin.com/in/eduardo-san/",
     },
   ];
 
@@ -66,7 +70,9 @@ export default function AboutUs() {
       <section className="aboutus__team">
         {team.map((member, index) => (
           <div key={index} className="aboutus__card">
-            <img src={member.image} alt={member.name} />
+            <a href={member.linkedIn}>
+              <img src={member.image} alt={member.name} />
+            </a>
             <h2>{member.name}</h2>
             <h3>{member.role}</h3>
             <p>{member.bio}</p>
