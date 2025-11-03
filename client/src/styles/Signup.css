@@ -36,24 +36,73 @@ main h1 {
 #signupForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 25px;
+  gap: 5px 25px;
+  row-gap: 20px;
+  align-items: start;
+  justify-items: stretch;
 }
 
-/* Make single fields (like email/password) span both columns */
-#signupForm label[for="email"],
-#signupForm input[name="email"],
-#signupForm label[for="password"],
-#signupForm input[name="password"],
-#signupForm label[for="confirm_password"],
+
+#signupForm label[for="first_name"] {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#signupForm input[name="first_name"] {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Last name label and input positioning *This one is important guys* */
+#signupForm label[for="last_name"] {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#signupForm input[name="last_name"] {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#signupForm label[for="email"] {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  text-align: center;
+}
+
+#signupForm input[name="email"] {
+  grid-column: 1 / 3;
+  grid-row: 4;
+}
+
+#signupForm label[for="password"] {
+  grid-column: 1 / 3;
+  grid-row: 5;
+  text-align: center;
+}
+
+#signupForm input[name="password"] {
+  grid-column: 1 / 3;
+  grid-row: 6;
+}
+
+#signupForm label[for="confirm_password"] {
+  grid-column: 1 / 3;
+  grid-row: 7;
+  text-align: center;
+}
+
 #signupForm input[name="confirm_password"] {
   grid-column: 1 / 3;
+  grid-row: 8;
 }
 
 #signupForm label {
   font-weight: 500;
-  color: #156c0d;
-  margin-bottom: 5px;
+  color: #008f8f;
+  margin-bottom: 0;
   display: block;
+  text-align: left;
 }
 
 #signupForm input {
@@ -64,6 +113,7 @@ main h1 {
   font-size: 0.95rem;
   outline: none;
   transition: border 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 #signupForm input:focus {
@@ -73,7 +123,8 @@ main h1 {
 
 button[type="submit"] {
   grid-column: 1 / 3;
-  background-color: #16570c;
+  grid-row: 9;
+  background-color: #008f8f;
   color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
@@ -113,12 +164,18 @@ button[type="submit"]:hover {
     grid-template-columns: 1fr;
   }
 
+  #signupForm label[for="first_name"],
+  #signupForm input[name="first_name"],
+  #signupForm label[for="last_name"],
+  #signupForm input[name="last_name"],
   #signupForm label[for="email"],
   #signupForm input[name="email"],
   #signupForm label[for="password"],
   #signupForm input[name="password"],
   #signupForm label[for="confirm_password"],
-  #signupForm input[name="confirm_password"] {
-    grid-column: auto;
+  #signupForm input[name="confirm_password"],
+  button[type="submit"] {
+    grid-column: 1;
+    grid-row: auto;
   }
 }
