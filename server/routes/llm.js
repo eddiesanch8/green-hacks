@@ -27,7 +27,6 @@ Requirements:
 - Tailor recommendations to the user's experience level (e.g., low-maintenance plants for beginners)
 - Care instructions should be 2 concise sentences
 - If exact native plants are unknown, select closely related species from the same USDA or regional planting zone
-- Only give the exact season, it should be a singular word not plural (e.g Summer, Fall, Winter, Spring).
 CRITICAL JSON RULES:
 - All text must be on a single line with no line breaks
 - Do not use apostrophes or quotes inside text fields
@@ -39,7 +38,7 @@ Return exactly one array of 5 objects following this structure:
   {
     "name": "Common plant name",
     "scientificName": "Genus species",
-    "season": "Best planting season. Be exact don't stray to plural",
+    "season": "Best planting season. Don't stray to plural",
     "care": "Brief care instructions for light, water, and soil",
     "funFact": "Interesting ecological or wildlife benefit",
     "description": "brief 2-3 sentence description",
