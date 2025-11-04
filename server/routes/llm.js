@@ -23,10 +23,11 @@ async function getAISeeds(
 
 Requirements:
 - Focus only on native and regionally appropriate species for the user's location
-- Suggest 5 different plants, trees or vegetables depending on area available togrow each unique in type and growing requirements
+- Suggest 5 different plants, trees or vegetables, or flowers depending on area available to grow each unique in type and growing requirements
 - Tailor recommendations to the user's experience level (e.g., low-maintenance plants for beginners)
 - Care instructions should be 2 concise sentences
 - If exact native plants are unknown, select closely related species from the same USDA or regional planting zone
+- Take into account the best time to grow based off of the users intent to grow 
 CRITICAL JSON RULES:
 - All text must be on a single line with no line breaks
 - Do not use apostrophes or quotes inside text fields
@@ -38,7 +39,7 @@ Return exactly one array of 5 objects following this structure:
   {
     "name": "Common plant name",
     "scientificName": "Genus species",
-    "season": "Best planting season. Don't stray to plural",
+    "season": "Best planting season",
     "care": "Brief care instructions for light, water, and soil",
     "funFact": "Interesting ecological or wildlife benefit",
     "description": "brief 2-3 sentence description",

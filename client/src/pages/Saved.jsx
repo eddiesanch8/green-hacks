@@ -10,13 +10,16 @@ function Saved() {
     const fetchFavorites = async () => {
       try {
         const token = localStorage.getItem("access_token");
-        const res = await fetch("https://green-hacks-production.up.railway.app/library", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const res = await fetch(
+          "https://green-hacks-production.up.railway.app/library",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         const data = await res.json();
         setPlants(data);
@@ -32,9 +35,12 @@ function Saved() {
     M.FormSelect.init(elems);
   }, [plantFilter]);
 
-  const filteredPlants = plants.filter((plant) =>
-    plantFilter ? plant.plant_details.season == plantFilter : true
-  );
+  const filteredPlants = plants.filter((plant) => {
+    if (!plantFilter) return true;
+
+    const season = plant.plant_details.season?.toLowerCase() || "";
+    return season.includes(plantFilter.toLowerCase());
+  });
 
   return (
     <main>
